@@ -6,9 +6,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-@FeignClient(name = "microservice-commandes", url = "localhost:9002")
+@FeignClient(name = "zuul-server", url = "localhost:9002")
 public interface MicroserviceCommandeProxy {
 
-    @PostMapping(value = "/commandes")
+    @PostMapping(value = "/microservice-commandes/commandes")
     CommandeBean ajouterCommande(@RequestBody CommandeBean commande);
 }

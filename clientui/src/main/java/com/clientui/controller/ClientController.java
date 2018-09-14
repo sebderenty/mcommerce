@@ -43,7 +43,7 @@ public class ClientController {
     public String accueil(Model model){
 
         List<ProductBean> produits =  ProduitsProxy.listeDesProduits();
-
+        System.out.println("nb products : " + produits.size());
         model.addAttribute("produits", produits);
 
         return "Accueil";
